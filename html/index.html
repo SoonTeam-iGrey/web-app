@@ -63,6 +63,8 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../assets/js/vue/Vue.js"></script>
   </head>
 
   <body>
@@ -848,6 +850,10 @@
                 </div>
                 <!--/ Order Statistics -->
 
+                <div id="skills_chart_component">
+
+                </div>
+
                 <!-- Expense Overview -->
                 <div class="col-md-6 col-lg-4 order-1 mb-4">
                   <div class="card h-100">
@@ -1070,5 +1076,6 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script src="../assets/js/vue/skillsChart/SkillsChartComponent.js"></script>
   </body>
 </html>
