@@ -103,16 +103,6 @@
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
                 </div>
-                <div class="demo-inline-spacing" style="padding-bottom: 30px;">
-                  <button type="button" class="btn btn-outline-primary">
-                    Business
-                    <span class="badge bg-white text-primary"></span>
-                  </button>
-                  <button type="button" class="btn btn-outline-primary" >
-                    Client
-                    <span class="badge bg-secondary rounded-pill"></span>
-                  </button >
-                </div>
                 <div class="mb-3">
                   <div class="form-check">
 
@@ -200,7 +190,13 @@
               console.log('API Response:', data);
               if (data && data.token) {
             // Redirect to index.html
-            window.location.href = 'index.html';
+                document.cookie = `authCookie=${data.token}`
+                console.log(data.roles);
+                if (data.roles.indexOf('RECRUITER') !== -1) {
+                  window.location.href = 'index_business.html'
+                } else {
+                  window.location.href = 'index.html';
+                }
           } else {
             // Handle the case where the response does not contain a token
             console.error('Authentication failed. Token not found in the response.');
