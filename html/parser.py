@@ -85,3 +85,62 @@ with open("result.json", "w") as json_file:
 
 # Print the JSON result to the console (optional)
 print(json.dumps(result))
+
+import pymysql
+
+# Replace these values with your MySQL server details
+host = 'localhost'
+user = 'root'
+port = 3306
+password = 'tuddiroot'
+database = 'skillstracer'
+
+# Establish a connection to the MySQL server
+connection = pymysql.connect(
+    host=host,
+    user=user,
+    port=port,
+    password=password,
+    database=database
+)
+
+# Create a cursor object to interact with the database
+cursor = connection.cursor()
+
+# Sample data for the query
+programming_language_matches = [
+    'Frontend',
+    'Backend',
+    'MobileDev',
+    'GameDev',
+    'DataScience',
+    'AI',
+    'QA',
+    'DevOps',
+    'Cybersecurity',
+    'DBAdmin',
+    'Networking',
+    'Embedded'
+]
+
+# Construct the column names and placeholders dynamically
+columns = ', '.join(programming_language_matches[i] for i in range(len(programming_language_matches)))
+
+placeholders = ', '.join(['%s' for _ in programming_language_matches])
+
+
+
+insert_query = f"""
+INSERT INTO Clienti (Frontend,	Backend, MobileDev, GameDev, DataScience, AI, QA, DevOps, Cybersecurity, DBAdmin, Networking, Embedded)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+"""
+print(insert_query)
+# Execute the query with the data
+cursor.execute(insert_query, domain_scores)
+
+# Commit the changes to the database
+connection.commit()
+
+# Close the cursor and connection
+cursor.close()
+connection.close()
