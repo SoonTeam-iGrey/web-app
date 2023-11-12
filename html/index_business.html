@@ -545,159 +545,8 @@
                 </div>
                 
                 <!-- Total Revenue -->
-                
-              <div class="row">
-                <!-- Order Statistics -->
-                <div class="col-md-6 col-lg-4 order-2 mb-4">
-                  <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                      <h5 class="card-title m-0 me-2">Skill Radar</h5>
-                      <div class="dropdown">
-                        <button
-                          class="btn p-0"
-                          type="button"
-                          id="transactionID"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          <i class="bx bx-dots-vertical-rounded"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                          <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <ul class="p-0 m-0">
-                        <li class="d-flex mb-4 pb-1">
-                          <div id="skills_chart_component">
 
-                          </div>
-                        </li>
-                        
-                        
-                        
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-4 order-2 mb-4">
-                  <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                      <h5 class="card-title m-0 me-2">Skill Radar</h5>
-                      <div class="dropdown">
-                        <button
-                          class="btn p-0"
-                          type="button"
-                          id="transactionID"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          <i class="bx bx-dots-vertical-rounded"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                          <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <ul class="p-0 m-0">
-                        <li class="d-flex mb-4 pb-1">
-                          <div id="skills_chart_component">
-
-                          </div>
-                        </li>
-                        
-                        
-                        
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!--/ Order Statistics -->
-
-                
-
-                <!-- Expense Overview -->
-                <!--/ Expense Overview -->
-
-                <!-- Transactions -->
-                <div class="col-md-6 col-lg-4 order-2 mb-4">
-                  <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                      <h5 class="card-title m-0 me-2">Skill Radar</h5>
-                      <div class="dropdown">
-                        <button
-                          class="btn p-0"
-                          type="button"
-                          id="transactionID"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          <i class="bx bx-dots-vertical-rounded"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
-                          <a class="dropdown-item" href="javascript:void(0);">Last 28 Days</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Last Month</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Last Year</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <ul class="p-0 m-0">
-                        <li class="d-flex mb-4 pb-1">
-                          <div id="skills_chart_component">
-
-                          </div>
-                        </li>
-                        
-                        
-                        
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!--/ Transactions -->
-              </div>
-              <div class="row">
-                <div class="col-md-6 col-lg-4 mb-3">
-                  <div class="card text-center">
-                    <div class="card-header">1st</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Name:</h5>
-                      <p class="card-text">Score:</p>
-                      <a href="javascript:void(0)" class="btn btn-primary">Contact</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-3">
-                  <div class="card text-center">
-                    <div class="card-header">2nd</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Name:</h5>
-                      <p class="card-text">Score:</p>
-                      <a href="javascript:void(0)" class="btn btn-primary">Contact</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-3">
-                  <div class="card text-center">
-                    <div class="card-header">3rd</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Name:</h5>
-                      <p class="card-text">Score:</p>
-                      <a href="javascript:void(0)" class="btn btn-primary">Contact</a>
-                    </div>
-                  </div>
-                </div>
-
+              <div class="row" id="scheduledCandidates">
               </div>
             </div>
             <!-- / Content -->
@@ -713,6 +562,7 @@
 
       <!-- Overlay -->
       <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
     </div>
     <!-- / Layout wrapper -->
 
@@ -739,6 +589,6 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script src="../assets/js/vue/skillsChart/SkillsChartComponent.js"></script>
+  <script src="../assets/js/vue/candidates/ScheduledCandidates.js"></script>
   </body>
 </html>

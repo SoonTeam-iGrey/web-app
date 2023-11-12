@@ -422,48 +422,83 @@
   // Order Statistics Chart
   // --------------------------------------------------------------------
   // TUDORELE_BAGA_ACI
-  const chartOrderStatistics = document.querySelector('#orderStatisticsChart');
-const orderChartConfig = {
-  chart: {
-    type: 'donut',
-    height: 350,
-  },
-  series: [85, 15, 50, 30, 40, 25, 10, 5, 15, 20, 8, 12],
-  labels: ['Frontend', 'Backend', 'Mobile Dev', 'Game Dev', 'Data Science', 'AI', 'QA', 'DevOps', 'Cybersecurity', 'DB Admin', 'Networking', 'Embedded'],
-  colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
-  dataLabels: {
-    enabled: false,
-  },
-  legend: {
-    show: false,
-  },
-  plotOptions: {
-    pie: {
-      donut: {
-        size: '75%',
-        labels: {
-          show: true,
-          name: {
-            fontSize: '22px',
-          },
-          value: {
-            fontSize: '16px',
-          },
-          total: {
+  let orderChartConfig = {
+    chart: {
+      type: 'donut',
+      height: 350,
+    },
+    series: [85, 15, 50, 30, 40, 25, 10, 5, 15, 20, 8, 12],
+    labels: ['Frontend', 'Backend', 'Mobile Dev', 'Game Dev', 'Data Science', 'AI', 'QA', 'DevOps', 'Cybersecurity', 'DB Admin', 'Networking', 'Embedded'],
+    colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
+    dataLabels: {
+      enabled: false,
+    },
+    legend: {
+      show: false,
+    },
+    plotOptions: {
+      pie: {
+        donut: {
+          size: '75%',
+          labels: {
             show: true,
-            label: 'Total',
-            color: '#333',
+            name: {
+              fontSize: '22px',
+            },
+            value: {
+              fontSize: '16px',
+            },
+            total: {
+              show: true,
+              label: 'Total',
+              color: '#333',
+            },
           },
         },
       },
     },
-  },
-};
+  };
+  function fetchSkills() {
+    function getMaxSkills(skills) {
+      let result = []
+      let maxMoment = '';
+      for (let i = 0; i < skills.length; i++) {
+        if (maxMoment < skills[i]['moment']) {
+          maxMoment = skills[i]['moment'];
+          result = [];
+        }
+        if (maxMoment === skills[i]['moment']) {
+          result.push(skills[i]);
+        }
+      }
+      return {
+        series: result.map(val => +val['theoreticalScore'] + +val['practicalScore']),
+        labels: result.map(val => val['domain'])
+      }
+    }
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+      headers: {
+        'Authorization': `Bearer ${getCookie('authCookie')}`
+      }
+    };
 
-if (chartOrderStatistics) {
-  const statisticsChart = new ApexCharts(chartOrderStatistics, orderChartConfig);
-  statisticsChart.render();
-}
+    fetch("http://{{BASE_HOST}}/api/skills".replace("{{BASE_HOST}}", baseHost), requestOptions)
+      .then(response => response.json())
+      .then(result => {
+        orderChartConfig = {
+          ...orderChartConfig,
+          ...getMaxSkills(result)
+        }
+        const chartOrderStatistics = document.querySelector('#orderStatisticsChart');
+        if (chartOrderStatistics) {
+          const statisticsChart = new ApexCharts(chartOrderStatistics, orderChartConfig);
+          statisticsChart.render();
+        }
+      });
+  }
+  fetchSkills();
 
 
   // Income Chart - Area chart

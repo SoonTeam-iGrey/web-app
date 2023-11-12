@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="314e068e-ed5e-41f0-a048-8712382d1bac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/cookies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/vue/candidates/ScheduledCandidates.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/dashboards-analytics.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/dashboards-analytics.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/vue/skillsChart/SkillsChartComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/vue/skillsChart/SkillsChartComponent.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vendor/css/core.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/css/core.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vendor/css/pages/page-account-settings.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/css/pages/page-account-settings.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vendor/css/pages/page-auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/css/pages/page-auth.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vendor/css/pages/page-icons.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/css/pages/page-icons.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vendor/css/pages/page-misc.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/css/pages/page-misc.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/vendor/css/theme-default.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/vendor/css/theme-default.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/html/index_business.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/index_business.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "chart3",
+    "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
