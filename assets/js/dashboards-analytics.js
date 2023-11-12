@@ -14,6 +14,7 @@
 
   // Total Revenue Report Chart - Bar Chart
   // --------------------------------------------------------------------
+  // TUDORELE_BAGA_ACI
   const totalRevenueChartEl = document.querySelector('#totalRevenueChart'),
     totalRevenueChartOptions = {
       series: [
@@ -420,73 +421,50 @@
 
   // Order Statistics Chart
   // --------------------------------------------------------------------
-  const chartOrderStatistics = document.querySelector('#orderStatisticsChart'),
-    orderChartConfig = {
-      chart: {
-        height: 165,
-        width: 130,
-        type: 'donut'
+  // TUDORELE_BAGA_ACI
+  const chartOrderStatistics = document.querySelector('#orderStatisticsChart');
+const orderChartConfig = {
+  chart: {
+    type: 'donut',
+    height: 350,
+  },
+  series: [85, 15, 50, 30, 40, 25, 10, 5, 15, 20, 8, 12],
+  labels: ['Frontend', 'Backend', 'Mobile Dev', 'Game Dev', 'Data Science', 'AI', 'QA', 'DevOps', 'Cybersecurity', 'DB Admin', 'Networking', 'Embedded'],
+  colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
+  dataLabels: {
+    enabled: false,
+  },
+  legend: {
+    show: false,
+  },
+  plotOptions: {
+    pie: {
+      donut: {
+        size: '75%',
+        labels: {
+          show: true,
+          name: {
+            fontSize: '22px',
+          },
+          value: {
+            fontSize: '16px',
+          },
+          total: {
+            show: true,
+            label: 'Total',
+            color: '#333',
+          },
+        },
       },
-      labels: ['Electronic', 'Sports', 'Decor', 'Fashion'],
-      series: [85, 15, 50, 50],
-      colors: [config.colors.primary, config.colors.secondary, config.colors.info, config.colors.success],
-      stroke: {
-        width: 5,
-        colors: cardColor
-      },
-      dataLabels: {
-        enabled: false,
-        formatter: function (val, opt) {
-          return parseInt(val) + '%';
-        }
-      },
-      legend: {
-        show: false
-      },
-      grid: {
-        padding: {
-          top: 0,
-          bottom: 0,
-          right: 15
-        }
-      },
-      plotOptions: {
-        pie: {
-          donut: {
-            size: '75%',
-            labels: {
-              show: true,
-              value: {
-                fontSize: '1.5rem',
-                fontFamily: 'Public Sans',
-                color: headingColor,
-                offsetY: -15,
-                formatter: function (val) {
-                  return parseInt(val) + '%';
-                }
-              },
-              name: {
-                offsetY: 20,
-                fontFamily: 'Public Sans'
-              },
-              total: {
-                show: true,
-                fontSize: '0.8125rem',
-                color: axisColor,
-                label: 'Weekly',
-                formatter: function (w) {
-                  return '38%';
-                }
-              }
-            }
-          }
-        }
-      }
-    };
-  if (typeof chartOrderStatistics !== undefined && chartOrderStatistics !== null) {
-    const statisticsChart = new ApexCharts(chartOrderStatistics, orderChartConfig);
-    statisticsChart.render();
-  }
+    },
+  },
+};
+
+if (chartOrderStatistics) {
+  const statisticsChart = new ApexCharts(chartOrderStatistics, orderChartConfig);
+  statisticsChart.render();
+}
+
 
   // Income Chart - Area chart
   // --------------------------------------------------------------------

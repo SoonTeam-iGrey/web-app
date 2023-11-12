@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     template: /**/`
     <div id="container_skillsRadarChart">
+
         <canvas id="skillsRadarChart"></canvas>
     </div>
 <!--        <p-->
@@ -134,7 +135,9 @@ const app = Vue.createApp({
         }
     },
     mounted() {
+
         this.fetchSkills();
+
     }
 });
 
