@@ -7,6 +7,8 @@
 
 'use strict';
 
+const baseHost = "localhost:8080";
+
 // JS global variables
 let config = {
   colors: {
