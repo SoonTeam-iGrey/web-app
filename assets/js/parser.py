@@ -31,7 +31,7 @@ def find_programming_languages_in_resume(resume_text):
     unique_matches = list(set(matches))
 
     return unique_matches
-
+print(sys.argv)
 # Read the PDF content from input
 pdf_content = sys.argv[1]
 
@@ -79,9 +79,3 @@ result = {
     "domain_scores": domain_scores,
 }
 
-# Write the result to a JSON file
-with open("result.json", "w") as json_file:
-    json.dump(result, json_file)
-
-# Print the JSON result to the console (optional)
-print(json.dumps(result))
